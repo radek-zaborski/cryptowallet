@@ -30,7 +30,7 @@
 
   <container>
     <?php
-    dump($page);
+    dump($configuration);
     include_once(__DIR__ . "./pages/$page.php");
     ?>
   </container>
