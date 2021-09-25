@@ -10,9 +10,9 @@ class View
 
   public function render(string $page, array $configuration): void
   {
-    include_once('./connectDatabase.php');
+    include_once('./config/api.php');
+    include_once('./config/connectDatabase.php');
     include_once('./templates/layout.php');
-
-    dump($configuration);
+    include_once('./config/apiFunctions.php');
   }
 }
