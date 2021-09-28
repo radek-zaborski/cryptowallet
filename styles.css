@@ -5,6 +5,22 @@ body {
     font-size: 1rem;
 }
 
+/*OTHER CLASS*/
+
+.red {
+    color: red;
+}
+
+.green {
+    color: rgb(6, 161, 6)
+}
+
+.blue {
+    color: blue;
+}
+
+/* HEADER */
+
 header {
     display: flex;
     flex-direction: column;
@@ -55,4 +71,54 @@ header nav ul li a:hover {
     border-radius: 30px;
     border: 3px solid rgb(220, 238, 220);
     background: rgb(190, 189, 189);
+}
+
+/* MAIN-PAGE*/
+
+.mainPage__container__allCrypto {
+    width: 90vw;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mainPage__container-crypto {
+    margin-top: 30px;
+    width: 30%;
+    min-width: 300px;
+    border: 2px solid blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mainPage__title-crypto {
+    width: 100%;
+    text-shadow: 8px 5px 12px grey;
+    text-align: center;
+}
+
+.mainPage__chart-coin {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainPage__chart-coin h3 {
+    width: 100%;
+}
+
+.mainPage__price {
+    width: 100%;
+    text-align: center;
+}
+
+.mainPage__chart-coin img {
+    width: 60%;
+}
+
+.mainPage__container-crypto p {
+    font-weight: bolder;
 }

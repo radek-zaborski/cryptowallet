@@ -1,7 +1,7 @@
 <?php
 
-function findCrypto($name)
+function findSingleCoin($nameCrypto)
 {
-  $jsonFindCrypto = file_get_contents("https://api.coinpaprika.com/v1/coins/$name");
-  echo $jsonFindCrypto;
-};
+  $detailCoinApi = file_get_contents("https://api.coinpaprika.com/v1/tickers/$nameCrypto");
+  return (array)json_decode($detailCoinApi);
+}

@@ -28,12 +28,12 @@
 
   </header>
 
-  <container>
-    <?php
-    dump($configuration);
-    include_once(__DIR__ . "./pages/$page.php");
-    ?>
-  </container>
+
+  <?php
+
+  include_once("./templates/pages/$page.php");
+  ?>
+
   <footer>stopka</footer>
 
 </body>
