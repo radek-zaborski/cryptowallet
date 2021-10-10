@@ -14,15 +14,21 @@
     <?php
 
     include_once('header.php');
-
+    $pg = $_GET['action'] ?? '';
     ?>
 
 
     <nav>
       <ul>
-        <li><a href='/'>Strona główna</a></li>
-        <li><a href='/?action=myWallet'>Mój portfel</a></li>
-        <li><a href='/?action=market'>Giełda</a></li>
+        <li class="<?php if ($pg == '') {
+                      echo 'activeLink';
+                    } ?> "><a href='/'>Strona główna</a></li>
+        <li class="<?php if ($pg == 'myWallet') {
+                      echo 'activeLink';
+                    } ?> "><a href='/?action=myWallet'>Mój portfel</a></li>
+        <li class="<?php if ($pg == 'market') {
+                      echo 'activeLink';
+                    } ?> "><a href='/?action=market'>Giełda</a></li>
       </ul>
     </nav>
 
@@ -34,7 +40,7 @@
   include_once("./templates/pages/$page.php");
   ?>
 
-  <footer>stopka</footer>
+  <footer></footer>
 
 </body>
 

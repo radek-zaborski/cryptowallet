@@ -21,7 +21,7 @@ include_once('./config/apiFunctions.php');
         ?>
     </h2>
     <h3 class="mainPage__price">
-      Price: <?php echo round($detailCoin->price, 4) . ' $' ?>
+      Cena: <?php echo round($detailCoin->price, 4) . ' $' ?>
     </h3></br></br>
     <figure class="mainPage__chart-coin">
       <h3> 30 min:</h3></br>

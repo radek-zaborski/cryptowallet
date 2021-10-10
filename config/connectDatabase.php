@@ -1,13 +1,12 @@
 <?php
 
 include_once('./config/config.php');
-$servername = $configuration['host'];
+$host = $configuration['host'];
 $username = $configuration['user'];
 $password = $configuration['password'];
-$dbname = $configuration['database'];
+$db = $configuration['database'];
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+$conn = new mysqli($host, $username, $password, $db);
 if ($conn->connect_error) {
-  dump('lipa');
+  dump('logowanie nie powiodło się');
 };
