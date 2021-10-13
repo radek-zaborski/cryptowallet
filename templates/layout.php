@@ -28,7 +28,7 @@
         <li class="<?php if ($pg == 'Market') {
                       echo 'activeLink';
                     } ?> "><a href='/?action=Market'>Giełda</a></li>
-        <li><a href='/?action=logout'>Wyloguj</a></li>
+        <li><a href='/?action=logout' class="logout-link hidden">Wyloguj</a></li>
       </ul>
     </nav>
 

@@ -8,8 +8,10 @@ class cryptoWallet
   {
 ?>
 <script language="javascript">
-let loginMenu = document.querySelector('.wallet_login-form');
+const loginMenu = document.querySelector('.wallet_login-form');
 loginMenu.classList.add('hidden');
+const logOutLink = document.querySelector('.logout-link');
+logOutLink.classList.remove('hidden');
 </script>
 <?php
   }

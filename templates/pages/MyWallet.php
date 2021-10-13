@@ -12,7 +12,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
   <label for="username">nazwa użytkownika: </label>
   <input type="text" name="username" />
   <label>hasło: </label>
-  <input type="text" name="password" />
+  <input type="password" name="password" />
   <input type="submit" name="submit" />
 </form>
 
