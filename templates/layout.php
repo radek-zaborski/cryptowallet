@@ -17,7 +17,6 @@
     $pg = $_GET['action'] ?? '';
     ?>
 
-
     <nav>
       <ul>
         <li class="<?php if ($pg == '') {
@@ -35,14 +34,12 @@
 
   </header>
 
-
   <?php
 
   include_once("./templates/pages/$page.php");
   ?>
 
   <footer></footer>
-
 </body>
 
 </html>

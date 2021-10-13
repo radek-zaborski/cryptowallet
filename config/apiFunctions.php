@@ -6,10 +6,7 @@ function findSingleCoin($nameCrypto)
   return (array)json_decode($detailCoinApi);
 }
 
-
-
 function findCrypto($array, $find)
-
 {
   $someNameForArray = [];
 
@@ -20,8 +17,6 @@ function findCrypto($array, $find)
   }
 
   $findIdCrypto = $array[array_search($find, $someNameForArray)]->id;
-
-
 
   return (findSingleCoin($findIdCrypto));
 };

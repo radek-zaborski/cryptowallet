@@ -16,8 +16,6 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
   <input type="submit" name="submit" />
 </form>
 
-
-
 <article class="wallet">
   <?php
 
@@ -41,36 +39,24 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 
   if (isset($_SESSION['username'])) {
 
-
-
-
-  ?>
-
-
-  <?php
     foreach ($result as $singleResultResponse) {
-
 
       array_push($arrayWithResponse, $singleResultResponse);
     };
 
     if (isset($arrayWithResponse)) {
 
-
       foreach ($arrayWithResponse as $data) {
 
         $renderCrypto = new cryptoWallet();
         $renderCrypto->hiddenLoginArea();
-
         $renderCrypto->generateCrypto($data);
       }
     } else {
 
-
       if ($conn->query($queryLogin)->num_rows > 0 or $conn->query($queryPass)->num_rows > 0) {
 
-
-    ?><h3>błędny login lub hasło</h3>
+  ?><h3>błędny login lub hasło</h3>
 
   <?php
       } else {

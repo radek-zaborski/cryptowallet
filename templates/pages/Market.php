@@ -3,6 +3,7 @@ include_once('./config/apiFunctions.php');
 include_once('./config/api.php');
 include_once('./config/controllerClass.php');
 ?>
+
 <article class="market__container">
 
   <form method="post">
@@ -84,7 +85,4 @@ include_once('./config/controllerClass.php');
       </span>
     </p>
   </article>
-
-
-
 </article>

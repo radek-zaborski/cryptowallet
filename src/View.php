@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App;
 
-
 class View
 {
 
@@ -12,8 +11,6 @@ class View
   {
 
     include_once('./config/api.php');
-
-
     include_once('./templates/layout.php');
   }
 }

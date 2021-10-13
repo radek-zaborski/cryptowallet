@@ -14,18 +14,14 @@ if ($headerTitle == '') { ?>
 } elseif ($headerTitle === 'MyWallet') { ?>
 <h1 class='header__title'>
   <?php
-
     echo 'MÓJ PORTFEL';
-
     ?>
 </h1>
 <?php
 } elseif ($headerTitle === 'Market') { ?>
 <h1 class='header__title'>
   <?php
-
     echo 'GIEŁDA';
-
     ?>
 </h1>
 <?php };

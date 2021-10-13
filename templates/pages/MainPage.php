@@ -5,12 +5,11 @@ include_once('./config/apiFunctions.php');
 ?>
 
 <section class="mainPage__container__allCrypto">
+
   <?php
   foreach ($firstTenCoinInArray as $coinData) {
     $coin = findSingleCoin($coinData->id);
     $detailCoin = (((array)$coin['quotes'])['USD']);
-
-
   ?>
 
   <div class="mainPage__container-crypto">
@@ -20,11 +19,14 @@ include_once('./config/apiFunctions.php');
         echo $coin['name'] . "&nbsp" . " #" .  $coin['rank'];
         ?>
     </h2>
+
     <h3 class="mainPage__price">
       Cena: <?php echo round($detailCoin->price, 4) . ' $' ?>
     </h3></br></br>
+
     <figure class="mainPage__chart-coin">
       <h3> 30 min:</h3></br>
+
       <?php
         if ($detailCoin->percent_change_30m > -1 & $detailCoin->percent_change_30m < 1) { ?>
       <img src="../../src/image/constans.png" />
