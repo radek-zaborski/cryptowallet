@@ -8,7 +8,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
   $_SESSION['password'] = $_POST['password'];
 }
 ?>
-<form class="wallet_login-form" method="POST">
+<form class="wallet__login-form" method="POST">
   <label for="username">nazwa użytkownika: </label>
   <input type="text" name="username" />
   <label>hasło: </label>
