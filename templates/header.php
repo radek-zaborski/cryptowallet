@@ -11,7 +11,7 @@ if ($headerTitle == '') { ?>
     ?>
 </h1>
 <?php
-} elseif ($headerTitle === 'myWallet') { ?>
+} elseif ($headerTitle === 'MyWallet') { ?>
 <h1 class='header__title'>
   <?php
 
@@ -20,7 +20,7 @@ if ($headerTitle == '') { ?>
     ?>
 </h1>
 <?php
-} elseif ($headerTitle === 'market') { ?>
+} elseif ($headerTitle === 'Market') { ?>
 <h1 class='header__title'>
   <?php
 

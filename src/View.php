@@ -8,7 +8,7 @@ namespace App;
 class View
 {
 
-  public function render(string $page, array $configuration): void
+  public function render(string $page, array $configuration)
   {
 
     include_once('./config/api.php');

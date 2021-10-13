@@ -15,12 +15,7 @@ include_once('./config/controllerClass.php');
 
   $nameFindCrypto = strtolower($_POST['name'] ?? 'bitcoin');
 
-  if ($nameFindCrypto !== '') {
-    $cryptoSearch = findCrypto($arrayCoinsApi, $nameFindCrypto);
-  }
-
-
-
+  $cryptoSearch = findCrypto($arrayCoinsApi, $nameFindCrypto);
 
   ?>
   <article class="market__findArticle">

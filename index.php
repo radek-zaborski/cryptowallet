@@ -14,5 +14,5 @@ const DEFAULT_ACTION = 'MainPage';
 $action = $_GET['action'] ?? DEFAULT_ACTION;
 
 $view = new View();
-
+session_start();
 $view->render($action, $configuration);

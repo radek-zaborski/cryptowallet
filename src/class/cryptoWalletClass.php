@@ -36,4 +36,9 @@ loginMenu.classList.add('hidden');
 </article>
 <?php
   }
+
+  public function logout()
+  {
+    session_destroy();
+  }
 }

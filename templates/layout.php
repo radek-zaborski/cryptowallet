@@ -23,12 +23,13 @@
         <li class="<?php if ($pg == '') {
                       echo 'activeLink';
                     } ?> "><a href='/'>Strona główna</a></li>
-        <li class="<?php if ($pg == 'myWallet') {
+        <li class="<?php if ($pg == 'MyWallet') {
                       echo 'activeLink';
-                    } ?> "><a href='/?action=myWallet'>Mój portfel</a></li>
-        <li class="<?php if ($pg == 'market') {
+                    } ?> "><a href='/?action=MyWallet'>Mój portfel</a></li>
+        <li class="<?php if ($pg == 'Market') {
                       echo 'activeLink';
-                    } ?> "><a href='/?action=market'>Giełda</a></li>
+                    } ?> "><a href='/?action=Market'>Giełda</a></li>
+        <li><a href='/?action=logout'>Wyloguj</a></li>
       </ul>
     </nav>
 
