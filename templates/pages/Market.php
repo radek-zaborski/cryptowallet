@@ -1,6 +1,5 @@
 <?php
 include_once('./config/apiFunctions.php');
-include_once('./config/api.php');
 include_once('./config/controllerClass.php');
 include_once('./src/class/cryptoWalletClass.php');
 

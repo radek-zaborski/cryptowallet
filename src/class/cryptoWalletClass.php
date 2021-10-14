@@ -25,7 +25,6 @@ logOutLink.classList.remove('hidden');
 <?php
   }
 
-
   public function generateCrypto($data)
   {
   ?>

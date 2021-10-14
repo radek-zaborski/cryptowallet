@@ -9,8 +9,7 @@ class View
 
   public function render(string $page, array $configuration)
   {
-
-    include_once('./config/api.php');
+    include('./config/api.php');
     include_once('./templates/layout.php');
   }
 }

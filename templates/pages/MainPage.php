@@ -79,6 +79,8 @@ if (isset($_SESSION['username']) and isset($_SESSION['password'])) {
         }
         ?>
     </figure>
+
+
     <figure class="mainPage__chart-coin">
       <h3> 1 dzień:</h3></br>
       <?php
