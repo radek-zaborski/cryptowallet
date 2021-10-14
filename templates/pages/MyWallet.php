@@ -50,7 +50,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 
         $renderCrypto = new cryptoWallet();
         $renderCrypto->hiddenLoginArea();
-        $renderCrypto->generateCrypto($data);
+        $renderCrypto->generateMyWallet($data);
       }
     } else {
 
