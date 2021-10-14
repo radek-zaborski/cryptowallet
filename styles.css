@@ -8,35 +8,6 @@ body {
     font-size: 1rem;
 }
 
-/*OTHER CLASS*/
-
-.red {
-    color: red;
-}
-
-.green {
-    color: rgb(6, 161, 6)
-}
-
-.blue {
-    color: blue;
-}
-
-.activeLink {
-    padding: 5px;
-    border-bottom: 3px yellowgreen solid;
-    border-top: 3px yellowgreen solid;
-    border-radius: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-}
-
 /* HEADER */
 
 header {
@@ -190,4 +161,33 @@ header nav ul li a:hover {
 
 .logout-info {
     text-align: center;
+}
+
+/*OTHER CLASS*/
+
+.red {
+    color: red;
+}
+
+.green {
+    color: rgb(6, 161, 6)
+}
+
+.blue {
+    color: blue;
+}
+
+.activeLink {
+    padding: 5px;
+    border-bottom: 3px yellowgreen solid;
+    border-top: 3px yellowgreen solid;
+    border-radius: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
 }

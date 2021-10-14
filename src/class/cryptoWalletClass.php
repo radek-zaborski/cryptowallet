@@ -1,15 +1,24 @@
 <?php
 
-
 class cryptoWallet
 {
-
   public function hiddenLoginArea()
   {
 ?>
+
 <script language="javascript">
 const loginMenu = document.querySelector('.wallet__login-form');
 loginMenu.classList.add('hidden');
+const logOutLink = document.querySelector('.logout-link');
+logOutLink.classList.remove('hidden');
+</script>
+<?php
+  }
+
+  public function hiddenLogOutMenu()
+  {
+  ?>
+<script language="javascript">
 const logOutLink = document.querySelector('.logout-link');
 logOutLink.classList.remove('hidden');
 </script>

@@ -2,6 +2,12 @@
 include_once('./config/apiFunctions.php');
 include_once('./config/api.php');
 include_once('./config/controllerClass.php');
+include_once('./src/class/cryptoWalletClass.php');
+
+if (isset($_SESSION['username']) and isset($_SESSION['password'])) {
+  $funcDisp = new cryptoWallet();
+  $funcDisp->hiddenLogOutMenu();
+}
 ?>
 
 <article class="market__container">
