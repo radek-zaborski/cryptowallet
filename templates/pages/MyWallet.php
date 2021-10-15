@@ -34,7 +34,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 
 
   $result = ($conn->query($query));
-
+  dump($result);
   $_SESSION['connectDb'] = $conn;
   $arrayWithResponse = [];
 
@@ -42,29 +42,30 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
   if (isset($_SESSION['username']) and isset($_SESSION['password'])) {
     if ($result->num_rows == 0) {
       echo "<h3 class='wallet__login-info'>Nie znaleziono użytkownika lub podano błędne dane do logowania</h3>";
-    }
-    foreach ($result as $singleResultResponse) {
+    } else {
+      foreach ($result as $singleResultResponse) {
 
-      array_push($arrayWithResponse, $singleResultResponse);
-    };
+        array_push($arrayWithResponse, $singleResultResponse);
+      };
 
-    if (isset($arrayWithResponse)) {
+      if (isset($arrayWithResponse)) {
 
-      $checkHaveCrypto = array_search(true, array_column($arrayWithResponse, 'namecrypto'));
+        $checkHaveCrypto = array_search(true, array_column($arrayWithResponse, 'namecrypto'));
 
 
-      if ($checkHaveCrypto==0 or $checkHaveCrypto==null ) {
-        $renderCrypto = new cryptoWallet();
-        $renderCrypto->hiddenLoginArea();
-
-        echo "<h3 class='logout-info'>Nie posiadasz żadnej kryptowaluty</h3>";
-      } else {
-
-        foreach ($arrayWithResponse as $data) {
-
+        if ($checkHaveCrypto == 0 or $checkHaveCrypto == null) {
           $renderCrypto = new cryptoWallet();
           $renderCrypto->hiddenLoginArea();
-          $renderCrypto->generateMyWallet($data);
+
+          echo "<h3 class='logout-info'>Nie posiadasz żadnej kryptowaluty</h3>";
+        } else {
+
+          foreach ($arrayWithResponse as $data) {
+
+            $renderCrypto = new cryptoWallet();
+            $renderCrypto->hiddenLoginArea();
+            $renderCrypto->generateMyWallet($data);
+          }
         }
       }
     }
