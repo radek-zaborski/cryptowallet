@@ -6,6 +6,9 @@ body {
     margin: 0;
     padding: 0;
     font-size: 1rem;
+    background-color: rgb(56, 56, 56);
+    color: white;
+    font-size: 1.2rem;
 }
 
 /* HEADER */
@@ -146,14 +149,43 @@ header nav ul li a:hover {
     width: 400px;
     height: auto;
     margin: 10px auto;
-    border: 1px solid black;
+    border: 5px double rgb(39, 168, 13);
     text-align: center;
+    border-radius: 35px;
+    padding: 8px;
 }
 
 .wallet__login-form {
     display: block;
     width: auto;
     margin-top: 30px;
+    text-align: center;
+}
+
+.wallet__container-button {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wallet__container-button button {
+    padding: 8px;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+.wallet__container-button .wallet__button--delete {
+    background: rgb(220, 0, 0);
+    color: white;
+}
+
+.wallet__container-button .wallet__button--edit {
+    background: rgb(15, 25, 153);
+    color: white;
+}
+
+.wallet__login-info {
     text-align: center;
 }
 

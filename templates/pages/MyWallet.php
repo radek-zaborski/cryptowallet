@@ -2,6 +2,7 @@
 
 include_once('./config/connectDatabase.php');
 include_once('./src/class/cryptoWalletClass.php');
+include_once('./config/dbFunc.php');
 
 if (isset($_POST['username']) and isset($_POST['password'])) {
   $_SESSION['username'] = $_POST['username'];
@@ -13,7 +14,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
   <input type="text" name="username" />
   <label>hasło: </label>
   <input type="password" name="password" />
-  <input type="submit" name="submit" />
+  <input type="submit" name="submit" value="zaloguj" />
 </form>
 
 <article class="wallet">
@@ -21,7 +22,6 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 
   $username = '';
   $password = '';
-  $test = ['1'];
 
   if (isset($_SESSION['username'])) {
     $username = htmlentities($_SESSION['username']);
@@ -30,15 +30,19 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
     $password = htmlentities($_SESSION['password']);
   };
 
-  $query = "SELECT * FROM cryptousers WHERE (username = '$username' AND password = '$password' )";
-  $queryPass = "SELECT * FROM cryptousers WHERE (password = '$password')";
-  $queryLogin = "SELECT * FROM cryptousers WHERE (username = '$username')";
+  $query = dbQuery($username, $password);
+
+
   $result = ($conn->query($query));
 
+  $_SESSION['connectDb'] = $conn;
   $arrayWithResponse = [];
 
-  if (isset($_SESSION['username'])) {
 
+  if (isset($_SESSION['username']) and isset($_SESSION['password'])) {
+    if ($result->num_rows == 0) {
+      echo "<h3 class='wallet__login-info'>Nie znaleziono użytkownika lub podano błędne dane do logowania</h3>";
+    }
     foreach ($result as $singleResultResponse) {
 
       array_push($arrayWithResponse, $singleResultResponse);
@@ -52,20 +56,9 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
         $renderCrypto->hiddenLoginArea();
         $renderCrypto->generateMyWallet($data);
       }
-    } else {
-
-      if ($conn->query($queryLogin)->num_rows > 0 or $conn->query($queryPass)->num_rows > 0) {
-
-  ?><h3>błędny login lub hasło</h3>
-
-  <?php
-      } else {
-
-      ?> <h3>Zaloguj się</h3>
-  <?php
-
-      }
     }
+  } else {
+    echo '<h3 class="wallet__login-info"> Wprowadź login oraz hasło</h3>';
   }
 
   ?>

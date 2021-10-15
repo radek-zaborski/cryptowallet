@@ -10,3 +10,7 @@ $conn = new mysqli($host, $username, $password, $db);
 if ($conn->connect_error) {
   dump('logowanie nie powiodło się');
 };
+function a()
+{
+  echo "no i działa";
+};

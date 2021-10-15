@@ -1,10 +1,10 @@
 <?php
 
 class cryptoWallet
-
-
-/*HIDDEN OBJECT*/
 {
+
+  /*HIDDEN OBJECT*/
+
   public function hiddenLoginArea()
   {
 ?>
@@ -31,9 +31,15 @@ logOutLink.classList.remove('hidden');
 
   /* RENDER OBJECT */
 
+
+  /*RENDER MY WALLET*/
+
   public function generateMyWallet($data)
   {
+    include_once('./config/connectDatabase.php');
+    include_once('./config/dbFunc.php');
   ?>
+
 <article class="wallet__container-single-crypto">
   <?php echo 'Nazwa Crypto: </br>' ?>
   <h3>
@@ -48,15 +54,35 @@ logOutLink.classList.remove('hidden');
   <h3>
     <?php echo $data['valuecrypto'] ?>
   </h3>
+  <div class="wallet__container-button">
 
+    <form method="post">
+      <input type="submit" name=<?php echo ('delete' . $data['id']); ?> value=<?php echo ('button' . $data['id']); ?> />
+    </form>
+
+    <!-- <button onclick="" name=" delete" class="wallet__button--delete">Usuń krypto</button>
+
+        <button name='edit' class="wallet__button--edit">Edytuj krypto</button> -->
+  </div>
 </article>
 <?php
+
+    if (isset($_POST['delete' . $data['id']])) {
+
+      $deleteCrypto = deleteCrypto($data['id']);
+      $conn = $_SESSION['connectDb'];
+      $conn->query($deleteCrypto);
+      header('Refresh: 1; /');
+    }
   }
+
+
+  /*RENDER TOP10*/
 
   public function generateTop10($data)
   {
     $detaildata = (((array)$data['quotes'])['USD']);
-  ?>
+    ?>
 <div class="mainPage__container-crypto">
 
   <h2 class="mainPage__title-crypto">

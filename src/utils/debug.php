@@ -13,7 +13,8 @@ function dump($data)
     padding: 1px 10px;
     margin: 5px;
     border: 1px dashed gray;
-    background: lightgray;
+    background: white;
+    color:black;
     "
   >
   <pre>';
