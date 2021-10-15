@@ -34,7 +34,6 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 
 
   $result = ($conn->query($query));
-  dump($result);
   $_SESSION['connectDb'] = $conn;
   $arrayWithResponse = [];
 
