@@ -50,11 +50,22 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
 
     if (isset($arrayWithResponse)) {
 
-      foreach ($arrayWithResponse as $data) {
+      $checkHaveCrypto = array_search(true, array_column($arrayWithResponse, 'namecrypto'));
 
+
+      if ($checkHaveCrypto==0 or $checkHaveCrypto==null ) {
         $renderCrypto = new cryptoWallet();
         $renderCrypto->hiddenLoginArea();
-        $renderCrypto->generateMyWallet($data);
+
+        echo "<h3 class='logout-info'>Nie posiadasz żadnej kryptowaluty</h3>";
+      } else {
+
+        foreach ($arrayWithResponse as $data) {
+
+          $renderCrypto = new cryptoWallet();
+          $renderCrypto->hiddenLoginArea();
+          $renderCrypto->generateMyWallet($data);
+        }
       }
     }
   } else {
